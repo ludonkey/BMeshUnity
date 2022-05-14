@@ -157,7 +157,7 @@ public class BMeshUnity
         var renderer = mf.GetComponent<MeshRenderer>();
         if (renderer)
         {
-            unityMesh.subMeshCount = Mathf.Max(unityMesh.subMeshCount, renderer.materials.Length);
+            unityMesh.subMeshCount = Mathf.Max(unityMesh.subMeshCount, Application.isPlaying ? renderer.materials.Length : 1);
         }
 
         for (int mat = 0; mat  < triangles.Length; ++mat)
